@@ -22,12 +22,9 @@
 | --- | --- |
 | `measure_catia.py` | Python 主程序：COM 连接 CATIA，批量测量零件/装配体并导出 Excel（含 MBD 导出） |
 | `measure_gui.py` | Tkinter 图形界面：复选框选择提取内容与 Excel 页面，后台调用主程序 |
-| `MeasurePart.CATScript` | VBA 宏：在 CATIA 内测单个零件（体积/表面积/重量/包络体） |
-| `MBDExport.CATScript` | VBA 宏：MBD 数据提取（指定参数表格 + Capture 逐个截图 → Word，选项选择） |
 | `requirements.txt` | Python 依赖清单 |
 | `README.md` | 本说明 |
-| `test/` | 主测试集（127 个 `.CATPart`，尚未批量测量） |
-| `test_small/` | 小测试集（6 个文件，已跑通验证：2 装配体 + 4 零件 + 截图） |
+
 
 ---
 
@@ -169,14 +166,6 @@ CATIA 的 3D 视口是 OpenGL，截图有多种兜底策略（按成功率择优
 
 ---
 
-## 四、在 test/ 上批量测量（需在装有 CATIA 的机器执行）
-
-```bash
-# 1) 测量全部 127 个零件, 生成文本/JSON/Excel
-python measure_catia.py --dir test
-
-# 2) (可选) 生成三维标注逐个截图并写回 Excel
-python measure_catia.py --dir test --shots
 
 # 或用界面: python measure_catia.py --gui
 ```
