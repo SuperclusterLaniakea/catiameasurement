@@ -1,0 +1,5 @@
+# CATIA 零件/装配体测量与提取 — Python 依赖
+# 运行前提: 本机必须已安装 CATIA V5(需含 SPA 空间分析许可), 否则连接 CATIA 会失败
+pywin32>=306      # COM 自动化连接 CATIA, 以及窗口查找/截图
+Pillow>=10.0      # 截图处理(尺寸统一、白底填充、内容检测)
+xlsxwriter>=3.1   # 导出多页 Excel 报告
